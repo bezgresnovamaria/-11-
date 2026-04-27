@@ -1,0 +1,59 @@
+#Практическая работа №5
+
+#Задание 1
+Tax_Rate = 0.13
+
+#ввод для пользоват.
+annual_income = float(input("годовой доход"))
+
+#расчеты налога и итога
+tax_amount = (annual_income * Tax_Rate)
+net_income = annual_income - tax_amount
+
+#вывод с f строками
+print(f"доход общая сумма: {annual_income:,.2f} р.")
+print(f"сумма налога: {tax_amount:,.2f} р.")
+print(f"выданная сумма: {net_income:,.2f} р.")
+
+#Задание 2
+#поставила лимиты имт константами
+underweight_limit = 18.0
+normal_weight_limit = 25.0
+overweight_Limit = 30.0
+
+#оформила заголовок
+print("=" * 30)
+print("калькулятор ИМТ")
+print("=" * 30)
+
+#сделала строчку для ввода данных юзером
+udata = user_input.split()
+#проверка кол-ва введенных данных
+if len(data) == 2:
+    try: #преобразование подстрок в число
+        weight_kg = float(data[0])
+        height_m = float(data[1])
+#проверка валидности
+        if weight_kg <= 0 or height_m <= 0:
+            print("Неправильный ввод, числа должны быть больше нуля")
+        else: #расчет имт при помощи данной формулы
+            bmi_value = weight_kg / (height_m * height_m)
+
+#определение имт исходя из ответа пользователя
+            if bmi_value < underweight_limit:
+                category_weight = "дефицит массы тела"
+            elif bmi_value <= normal_weight_limit:
+                category_weight = "нормальная масса тела"
+            elif bmi_value < overweight_Limit:
+                category_weight = "избыточная масса тела"
+            else:
+                category_weight = "ожирение"
+#вывод результатов
+            print(f"При росте {height_m} м и при весе {weight_kg} кг:")
+            print(f"ваш ИМТ: {bmi_value:.1f}.")
+            print(f"ваша категория: {category_weight}.")
+
+    except ValueError:
+        print("введите числовые значения.")
+else:
+    print("введите два числа через пробел.")

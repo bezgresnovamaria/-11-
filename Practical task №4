@@ -1,0 +1,34 @@
+#Практическая работа №4
+
+#Задание 1
+import math
+x = float(input())
+result = math.floor(x)+math.ceil(x)
+print(result)
+
+#Задание 3
+number=input()
+
+print(f'цифра в позиции тысяч равна {number[0]}')
+print(f'цифра в позиции сотен равна {number[1]}')
+print(f'цифра в позиции десятков равна {number[2]}')
+print(f'цифра в позиции единиц равна {number[3]}')
+
+#Задание 4
+n = int(input())
+k = int(input())
+each = k // n
+remaining = k % n
+print(each)
+print(remaining)
+
+#Задание 5
+minutes = int(input("даны минуты: "))
+hours = minutes // 60
+remaining_minutes = minutes % 60
+print(f"{minutes} мин = {hours} час {remaining_minutes} мин.")
+
+#Задание 7
+number = int(input("номер места"))
+comparement_number = (number + 3)//4
+print(comparement_number)

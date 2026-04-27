@@ -1,0 +1,46 @@
+#Практическая работа №9
+
+#Задание 1
+n = int(input("введите натуральное число: "))
+
+current_num = 1
+
+print("числа от 1 до n (с искл.)")
+
+while current_num <= n:
+    if 5 <= current_num <= 9:
+        current_num += 1
+        continue
+    if 17 <= current_num <= 37:
+        current_num += 1
+        continue
+    if 78 <= current_num <= 87:
+        current_num += 1
+        continue
+
+    print(current_num, end = " ")
+    current_num += 1
+
+print()
+
+#Задание 2
+payment = int(input("введите сумму оплаты: "))
+
+coin_denomination = [25,10,5,1]
+
+coin_count = 0
+
+remaimimg_ammount = payment
+
+print(f"сумма к оплате: {payment}")
+
+while remaining_ammount > 0
+    for coin in coin_denomination:
+        if coin <= remaining_ammount:
+            coin_used = remaining_ammpount:
+            coin_count += coin_used
+            remaining_ammount -= coin_used * coin
+            print(f"использовано монет {coin_used} номиналом {coin}")
+            break
+
+print(f"минимум кол-во монет: {coin_count}")

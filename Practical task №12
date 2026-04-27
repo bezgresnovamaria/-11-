@@ -1,0 +1,106 @@
+#Правктическая работа №12
+
+#Задание 1
+n = int(input("введите n: "))
+
+numbers = [num for num in range (1,n+1) if num %2 !=0]
+print(numbers)
+
+#Задание 2
+max_price = max(prices)
+min_price = min(prices)
+sum_price = sum(prices)
+average_price = sum_price/len(prices)
+
+print(max_price)
+print(min_price)
+print(sum_price)
+print(average_price)
+
+#Задание 3
+users = ['admin','guest','admin','quest']
+print(users)
+
+users[2] = 'moderator'
+print(users)
+
+users[-1] = 'super admin'
+print(users)
+
+users.append('newbie')
+print(users)
+
+#Задание 4
+marks = [5,4,3,5,2,5,4,3,5,5]
+
+count_5 = 0
+count_2 = 0
+
+for mark in marks:
+    if mark == 5:
+        count_5 += 1
+    elif mark == 2:
+        count_2 += 1
+
+print(f"пятерки - {count_5} шт")
+print(f"двойки - {count_2} шт")
+
+#Задание 5
+data = [10,20,30,40,50,60,70,80,90,100]
+
+print(data[:3])
+print(data[-3:])
+print(data[::-1])
+
+#Задание 6
+word = input("введите слово: ")
+
+chars = list(word)
+reversed_chars = chars[::-1]
+
+if chars == reversed_chars:
+    print("это палиндром")
+else:
+    print("это не палиндром")
+
+#Задание 7
+number = [10,20,30,40,50]
+
+search_numbers = int(input("введите число: "))
+
+found = False
+for i in range(len(numbers)):
+    if number[i] == search_numbers:
+        print(f"индекс {search_numbers}-{i}")
+        founf = True
+        break
+
+if not found:
+    print("число не найдено")
+
+#Самостоятельная отработка
+
+#Задание 1
+prices_str = '100 50 200 150 75 300'
+
+prices_list = prices_str.split()
+print(prices_list)
+
+prices = [int(price) for price in prices_list]
+print(prices)
+
+max_price = max(prices)
+prices.remove(max_price)
+print(prices)
+
+new_price = max_price * 0.5
+prices.append(new_price)
+print(prices)
+
+prices.sort()
+print(prices)
+
+print(*prices, sep= ', ')
+
+average_price = sum(prices) / len(prices)
+print(average_price)

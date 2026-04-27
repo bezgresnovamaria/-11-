@@ -1,0 +1,107 @@
+#Практическая работа №3
+
+#задание 1
+a = 42
+b = 3.14159
+c = "Hello, Python!"
+d = True
+e = [1,2,3]
+f = (4,5,6)
+g = {"name": "Alice", "age": 30}
+h = {7,8,9}
+i =None
+
+print("Тип переменной a:", type(a))
+print("Тип переменной b:", type(b))
+print("Тип переменной c:", type(c))
+print("Тип переменной d:", type(d))
+print("Тип переменной e:", type(e))
+print("Тип переменной f:", type(f))
+print("Тип переменной g:", type(g))
+print("Тип переменной h:", type(h))
+print("Тип переменной i:", type(i))
+
+#задание 2.1
+my_list = [1,2,3]
+print("изначальный список:", my_list)
+
+my_list[0] = 100
+print("изменения в списке:", my_list)
+
+#задание 2.2
+my_tuple = (1,2,3)
+print("изначальный кортеж:", my_tuple)
+
+my_tuple[0] = 100
+print("изменения в кортеже:", my_tuple)
+
+#задание 2.3
+my_string = "Cat"
+print("изначальная строка:", my_string)
+
+my_string[0]='b'
+print("изменения в строке:", my_string)
+
+my_string = "b" + my_string[1:]
+print("новая строка:", my_string)
+
+#задание 3.1
+num1 = input("введите первое число:")
+num2 = input("введите второе число:")
+
+num1_int = int(num1)
+num2_int = int(num2)
+
+result = num1_int + num2_int
+print(f"результат сложения: {result}")
+
+#задание 3.2
+try:
+    num1 = input("введите первое число:")
+    num2 = input("введите второе число:")
+
+    num1_int = int(num1)
+    num2_int = int(num2)
+
+    result = num1_int + num2_int
+    print(f"результат сложения: {result}")
+
+except ValueError:
+    print("Ошибка: Введие целые числа (например 5 или 10)")
+
+#задание 5
+shopping_list = ["колбаса","сыр","кофе"]
+print("изначальный список:", shopping_list)
+
+shopping_list.append("тапки")
+print("изменения в списке", shopping_list)
+
+print("длина списка:", shopping_list)
+
+unquie_items = set (shopping_list)
+print("множество:", unquie_items)
+
+print("\n--- различия между списком и множеством ---")
+print("тип shopping list: {type(shopping_list)}")
+print("тип unquie items: {type(unquie_items)}")
+print("сохранение порядка списка: {shopping_list}")
+print("множество не гарантирует порядок: {unquie_items}")
+
+print("\n--- демонстрация уникальности ---")
+shopping_list_with_duplicates = ["колбаса", "сыр", "кофе", "колбаса", "сыр"]
+print(f"список с дубликатами: (shopping_list_with_duplicates)")
+print(f"множества из списка с дубликатами: {set(shopping_list_with_duplicates)}")
+
+#Задание 6
+name=input("ваше имя: ")
+age_str = input("ваш возраст: ")
+subjects_str = input("любимые предметы (через запятую): ")
+
+print("="*30)
+print("АНКЕТА СТУДЕНТА")
+print("="*30)
+
+print(f"имя: {name}")
+print(f"возраст: {age_str}")
+print(f"любимые предметы: {subjects_str}")
+print("="*30)

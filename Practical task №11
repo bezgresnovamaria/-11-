@@ -1,0 +1,22 @@
+#Практическая работа №11
+
+#Задание 1
+found = False
+
+for n in range (1,14):
+    for k in range(1,13):
+        for m in range(1,12):
+            if 28*n+30*k+31*m == 365:
+                print(n,k,m)
+                break
+        if found:
+            break
+    if found:
+        break
+
+#Задание 2
+for x in range(1,10):
+    for y in range(1,19):
+        for z in range(1,200):
+            if 10*x+5*y+0,5*z == 100:
+                print(x,y,z)

@@ -1,0 +1,49 @@
+#Практическая работа №8
+
+#Задание 1
+n = int(input("введите натуральное число n: "))
+
+if n <= 0:
+    print ("неверное значение")
+else:
+    for i in range (1,11):
+        print(f"{n} x {i} = {n*i}")
+
+#Задание 2
+all_even = true
+
+for i in range(10):
+    number = int(input())
+
+    if number % 2 !=0:
+        all_even = False
+
+if all_even:
+    print("yes")
+else:
+    print("no")
+
+#Задание 3
+n = int(input())
+
+alternating_sum = 0
+
+for i in range (1, n+1):
+    if i % 2 == 1:
+        alternating_sum += i
+    else:
+        alternating_sum -= i
+
+print(alternating_sum)
+
+#Задание 4
+m = int(input())
+p = int(input())
+n = int(input())
+
+current_population = m
+
+for i in range(1,n+1):
+    print(i,current_population)
+
+    current_population = current_population * (p + 1/100)

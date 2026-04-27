@@ -1,0 +1,74 @@
+#Практическая работа №13
+
+#Задание 1
+numbers = [2,6,3,14,10,4,11,16,12,5,4,16,1,0,8,16,10,10,8,5,1,11,10,10,12,0,0,6,14,8,2,12,14,5,6,12,1,2,10,14,9,1,15,1,2,14,16,6,7,5]
+
+print(len(numbers))
+print(numbers[-1])
+print(numbers[::-1])
+if 5 in numbers and 17 in numbers:
+    print("Да")
+else:
+    print("Нет")
+
+Print(numbers[1:-1])
+
+#Задание 4
+ip_string = input('введите IP адресс: ')
+
+ip_parts = ip_string.split('.')
+
+is_valid = True
+
+if len(ip_parts) != 4:
+    is_valid = False
+else:
+    for part in ip_parts:
+        if not part.isdigit():
+            is_valid = False
+            break
+
+        number = int(part)
+
+        if number < 0 or number > 255:
+            is_valid = False
+            break
+
+if is_valid:
+    print("Да")
+else:
+    print("нет")
+
+#Задание 5
+input_string = input("введите строку чисел через пробел: ")
+
+number_list = [int(num) for num in input_string.split()]
+
+unque_numbers = set()
+
+count_dict = {}
+
+for num in numbers_list:
+    count_dict[num] = count_dict.get(num,0)+1
+
+pairs_count = 0
+for count in count_dict.values():
+    if count>1:
+        paris_count += count * (count - 1)//2
+
+print(paris_count)
+
+#Задание 6
+numbers = [8,9,10,11]
+
+numbers [1] = 17
+
+numbers.extend([4,5,6])
+
+numbers.pop(0)
+
+numbers_copy = numbers.copy()
+numbers.extend(numbers_copy)
+
+numbers.insert(3,25)
+print(numbers)

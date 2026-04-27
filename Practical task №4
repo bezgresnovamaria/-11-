@@ -32,3 +32,32 @@ print(f"{minutes} мин = {hours} час {remaining_minutes} мин.")
 number = int(input("номер места"))
 comparement_number = (number + 3)//4
 print(comparement_number)
+
+
+#Самостоятельная работа с Чаш-Оол
+
+#Задание 1
+import math
+
+seat_number = int(input("введите номер места"))
+compartment_number = (seat_number + 3) // 4
+
+print(compartment_number)
+
+#Задание 3
+import math
+
+
+def calculate_distance(x1, y1, x2, y2):
+    distance = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+    eturn distance
+
+print("введите координаты точек")
+first_point_x = float(input("x1:"))
+first_point_y = float(input("y1:"))
+second_point_x = float(input("x2:"))
+second_point_y = float(input("y2:"))
+
+result_distance = calculate_distance(first_point_x, first_point_y, second_point_x, second_point_y)
+
+print(f"расстояние между точками ({first_point_x}, {first_point_y}) и ({second_point_x}, {second_point_y}) составляет: ({result_distance:.2f}):")

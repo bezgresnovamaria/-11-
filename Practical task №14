@@ -1,0 +1,129 @@
+#Практическая работа №14
+
+#Задание 1
+import random
+list_1 = []
+rows = random.randint(2,5)
+
+for i in range(rows):
+    cols = random.randint(2,5)
+    row = [random.randint(0,20) for _ in range (cols)]
+    list_1.append(row)
+
+print("list_1:")
+for row in list_1:
+    print(row)
+
+max_value = list_1[0][0]
+max_row = 0
+max_col = 0
+
+for i in range(len(list_1)):
+    for j in range(len(list_1[i])):
+        if list_1[i][j] > max_value:
+            max_value = list_1[i][j]
+            max_row = i
+            max_col = j
+
+#print(f"\nсамое большое число: {max_value}")
+#print(f"ряд: {max_row},  столбец: {max_col}")
+
+#Задание 2
+import random
+
+list_2 = []
+rows = random.randint(1,10)
+
+for i in range(rows):
+    cols = random.randint(1,10)
+    rows = [random.randint(1,20) for _ in range(cols)]
+    list_2.append(row)
+
+print("list_2:")
+for row in list_2:
+    print(row)
+
+row_sums = []
+total_sum = 0
+max_sum = 0
+max_sum_row = 0
+
+for i in range(len(list_2)):
+    current_sum = 0
+    for j in range(len(list_2[i])):
+        current_sum = current_sum + list_2[i][j]
+
+    row_sums.append(current_sum)
+    total_sum = total_sum + current_sum
+
+    if current_sum > max_sum:
+        max_sum = current_sum
+        max_sum_row = 1
+
+print("\nРезультат")
+for i in range(len(row_sums)):
+    print(f"Сумма строки {i}: {row_sums[i]}")
+print(f"общая сумма всех элементов: {total_sum}")
+print(f"строка с максимальной суммой (строка {max_sum_row}): сумма = {max_sum}")
+
+#Задание 3
+import random
+list_3 = []
+rows = random.randint(1,10)
+
+for i in range(rows):
+    cols = random.randint(1,10)
+    row = [random.randint(-20,20) for _ in range(cols)]
+    list_3.append(row)
+
+print("list_3")
+for row in list_3:
+    print(row)
+
+new_list_3 = []
+
+for i in range(len(list_3)):
+    good_row = []
+    for j in range(len(list_3[i])):
+        current_number = list_3[i][j]
+
+        if current_number > 0
+            good_row.append(current_number)
+
+    new_list_3.append(good_row)
+print("\nНовый список")
+for row in new_list_3:
+    print(row)
+
+
+#Задание 4
+import random
+
+list_4 = []
+rows = random.randint(1,10)
+
+for i in range(rows):
+    cols = random.randint(4,10)
+    row = [random.randint(1,10) for _ in range(cols)]
+    list_4.append(row)
+
+print("Cписок")
+for row in list_4:
+    print(row)
+
+search_number = random.randint(1,10)
+print(f"поиск числа {search_number}")
+
+position = []
+
+for i in range(len(list_4)):
+    for j in range(len(list_4[i])):
+        if list_4[i][j] == search_number:
+            position.append([i, j])
+
+if position:
+    print(f"число {search_number} найдено на позициях:")
+    for pos in position:
+        print(f"строка {pos[0]} столбец {pos[1]}")
+else:
+    print(f"число: {search_number} не найдено")

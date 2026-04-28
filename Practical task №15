@@ -1,0 +1,120 @@
+#Практическая работа №15
+
+#Задание 1
+print("Введите 25 символов для лабиринта")
+maze_string = input("Ввод: ")
+print("\nЛабиринт")
+
+for i in range(0,25,5):
+    print(maze_string[i:i+5])
+
+for i in range(25):
+    if maze_string[i] == "н":
+        start_row = i//5
+        start_col = i % 5
+print(f"\nначало: {start_row}, {start_col}")
+
+for i in range(25):
+    if maze_string[i] == "ф":
+        end_row = i//5
+        end_col = i % 5
+print(f"финиш: {end_row}, {end_col}")
+
+distance = abs(start_row - end_row) + abs(start_col - end_col)
+print(f"расстояние: {distance}\n")
+
+print("монеты")
+coins = 0
+for i in range(25):
+    if maze_string[i] == "м":
+        coins += 1
+print(f"{"🟡"*coins}\n")
+
+print("здоровье")
+health = 100
+traps = maze_string.count("л")
+enemies = maze_string.count("з")
+damage = traps * 10 + enemies * 50
+health_left = health - damage
+print(f"{"♥" * (health_left//10)}\n{"♡" * (damage//10)}\n")
+
+print("Визуализация лабиринта при помощи эмодзи")
+for i in range(0,25,5):
+    row = maze_string[i:i+5]
+    row = row.replace("0", "⬜")
+    row = row.replace("1", "⬛")
+    row = row.replace("л", "🔷")
+    row = row.replace("м", "🟡")
+    row = row.replace("ф", "🟫")
+    row = row.replace("з", "🐷")
+    row = row.replace("н", "⭐")
+    print(row)
+
+#Самостоятельная отработка
+
+#Задание 1
+group1 = {'Иван','Мария','Петр','Сергей','Анна'}
+group2 = {'Мария','Анна','Дмитрий','Елена','Сергей'}
+print(group1)
+print(group2)
+
+both = group1 & group2
+print(f"cтуденты в обеих группах: {both}")
+
+only1 = group1 - group2
+print(f"студ.ток в 1 группе: {only1}")
+
+only2 = group2 - group1
+print(f"студ.ток во 2 группе: {only2}")
+
+all_stud = group1 | group2
+print(f"все студ. хотя бы в одной группе:{all_stud}")
+
+only_one = group1 ^ group2
+print(f"все студ. только в одной группе: {only_one}")
+
+#Задание 2
+word1 = input("введите первое слово: ")
+word2 = input("введите второе слово: ")
+
+print(f"первое слово: {word1}")
+print(f"второе слово: {word2}")
+
+set1 = set(word1)
+set2 = set(word2)
+
+general = set1 & set2
+print(f"общие буквы: {general}")
+
+only_first = set1 - set2
+print(f"буквы только в 1 слове: {only_first}")
+
+only_second = set2 - set1
+print(f"буквы только во втором слове: {only_second}")
+
+all_letters = set1 | set2
+print(f"все буквы: {all_letters}")
+
+#Задание 3
+requested = {'Python','SQL','Git','Docker'}
+
+candidate1 = {'Python','SQL','Git','Docker','Kubernetes'}
+candidate2 = {'Python','SQL','Git','JavaScript'}
+candidate3 = {'Python','SQL','Git','HTML/CSS'}
+
+print(f"требуемые навыки: {requested}\n")
+
+print(f"кандидат 1: {candidate1}")
+print(f"есть ли все навыки?: {requested.issubset(candidate1)}")
+print(f"отсутствуют навыки: {requested - candidate1}")
+print(f"лишние навыки: {candidate1 - requested}\n")
+
+print(f"кандидат 2: {candidate2}")
+print(f"есть ли все навыки?: {requested.issubset(candidate2)}")
+print(f"отсутствуют навыки: {requested - candidate2}")
+print(f"лишние навыки: {candidate2 - requested}\n")
+
+print(f"кандидат 3: {candidate3}")
+print(f"есть ли все навыки?: {requested.issubset(candidate3)}")
+print(f"отсутствуют навыки: {requested - candidate3}")
+print(f"лишние навыки: {candidate3 - requested}")
